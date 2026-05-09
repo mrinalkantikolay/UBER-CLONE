@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<html class="light dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>RideNova - Authentication</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"on-secondary": "#3d3f4e", "outline-variant": "#414760", tertiary: "#af88ff", "error-container": "#871c34", "tertiary-fixed-dim": "#7632e7", "on-tertiary-container": "#ffffff", "on-tertiary": "#2b0065", "surface-variant": "#1f243c", "surface-container-lowest": "#000000", "inverse-on-surface": "#525462", secondary: "#c4c5d7", "on-surface-variant": "#a5aac7", "on-secondary-fixed": "#3c3f4d", "inverse-surface": "#fbf8ff", "surface-container-high": "#1a1f32", "surface-container-low": "#0f1322", surface: "#0b0e19", "on-error": "#490013", "on-primary-fixed": "#000000", "surface-bright": "#252b43", outline: "#6f7490", "on-tertiary-fixed": "#ffffff", "surface-tint": "#c0c1ff", "primary-fixed-dim": "#6366f1", "on-primary": "#2724b8", "on-secondary-container": "#bdbed0", "inverse-primary": "#494bd7", error: "#f97386", "on-primary-fixed-variant": "#010028", "on-secondary-fixed-variant": "#585b6a", "on-background": "#e1e4ff", "secondary-fixed": "#e0e1f4", "primary-fixed": "#7073ff", "primary-container": "#3c3dca", "surface-dim": "#0b0e19", "tertiary-fixed": "#8342f4", "surface-container-highest": "#1f243c", "on-primary-container": "#e2e0ff", "secondary-fixed-dim": "#d2d3e5", "surface-container": "#14192a", primary: "#c0c1ff", "tertiary-container": "#8342f4", "on-tertiary-fixed-variant": "#e5d5ff", "on-error-container": "#ff97a3", background: "#0b0e19", "on-surface": "#e1e4ff", "secondary-container": "#383b49", "secondary-dim": "#b6b8c9", "tertiary-dim": "#8a4cfc", "error-dim": "#c44b5f", "primary-dim": "#6063ee"}, borderRadius: {DEFAULT: "0.5rem", lg: "1rem", xl: "1.5rem", full: "9999px"}, fontFamily: {headline: ["Plus Jakarta Sans"], body: ["Plus Jakarta Sans"], label: ["Plus Jakarta Sans"], display: "Plus Jakarta Sans"}}}};</script>
+<style>
+        body {
+            background-color: #e8eaf0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .neomorphic-raised {
+            box-shadow: 6px 6px 12px rgba(0,0,0,0.08), -6px -6px 12px rgba(255,255,255,0.6);
+        }
+        .neomorphic-inset {
+            box-shadow: inset 4px 4px 8px rgba(0,0,0,0.06), inset -4px -4px 8px rgba(255,255,255,0.5);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col">
+<!-- TopNavBar (Suppressed for focused auth flow per shell mandate, but used as brand anchor) -->
+<header class="w-full top-0 sticky flex justify-between items-center px-8 py-4 max-w-full mx-auto z-50 bg-surface border-b border-outline-variant/30">
+<div class="text-2xl font-semibold tracking-tight text-primary">RideNova</div>
+<div class="hidden md:flex gap-8 items-center">
+<span class="font-plus-jakarta text-sm font-medium text-on-surface-variant">Help</span>
+</div>
+</header>
+<main class="flex-grow flex items-center justify-center p-6 md:p-12">
+<div class="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-stretch">
+<!-- Left Side: Login Form -->
+<section class="flex flex-col justify-center">
+<div class="mb-10">
+<h1 class="text-4xl font-semibold text-on-surface mb-3 tracking-tight">Welcome Back</h1>
+<p class="text-on-surface-variant text-lg">Enter your phone number to get started with your next journey.</p>
+</div>
+<div class="neomorphic-raised bg-surface p-10 rounded-xl space-y-8">
+<div class="space-y-4">
+<label class="block text-sm font-medium text-on-surface-variant px-1">Phone Number</label>
+<div class="relative">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant material-symbols-outlined" data-icon="smartphone">smartphone</span>
+<input class="w-full pl-12 pr-4 py-4 bg-surface neomorphic-inset border-none rounded-lg focus:ring-2 focus:ring-primary/20 text-on-surface placeholder:text-outline text-lg transition-all outline-none" placeholder="+1 (555) 000-0000" type="tel"/>
+</div>
+</div>
+<button class="w-full py-4 px-6 bg-surface neomorphic-raised rounded-lg text-primary font-semibold text-lg hover:translate-y-[-2px] active:scale-95 active:shadow-inner transition-all duration-150 flex items-center justify-center gap-2">
+                        Send OTP
+                        <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<div class="pt-4 text-center">
+<p class="text-on-surface-variant text-sm">
+                            Don't have an account? 
+                            <a class="text-primary font-semibold hover:underline" href="#">Sign Up</a>
+</p>
+</div>
+</div>
+<div class="mt-12 neomorphic-raised bg-surface p-6 rounded-xl flex items-center gap-6">
+<div class="w-16 h-16 rounded-lg neomorphic-inset overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="professional driver smiling behind the wheel of a modern luxury car with soft interior lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8SCZWKTFc1kkqL-iA5lW7UQZL5H7Y9UEHUWrD4ewMVwUM0tiF11l3GBv-Vwg39J3BYcqM4Eh6i52bWDoLQT1TlzIRlimFaoh5CuuJ8n4YyRwQTSw_Raz6KcgzrGvpgZZm8wMc5Z9AiJ1qT4eq-7DpSIyXo1_mpTjVsNKz3BIr2_s8pyXNsyHW5BCB2P6blaN-ccby7zsHGPkkwuD_GJ5hKBU7OorgUgq_81TJe9fz-jA9U79k_qWDrSqEfsYznm97oPMdwlygMKY"/>
+</div>
+<div>
+<p class="text-on-surface text-sm font-medium">Top-rated drivers available 24/7</p>
+<p class="text-on-surface-variant text-xs mt-1">Safe, reliable, and comfortable rides across 100+ cities.</p>
+</div>
+</div>
+</section>
+<!-- Right Side: OTP Verification -->
+<section class="flex flex-col justify-center">
+<div class="neomorphic-raised bg-surface p-10 rounded-xl border border-white/20">
+<div class="mb-8 text-center">
+<div class="w-16 h-16 bg-surface neomorphic-raised rounded-full flex items-center justify-center mx-auto mb-6">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="lock_open">lock_open</span>
+</div>
+<h2 class="text-2xl font-semibold text-on-surface tracking-tight">Verify Identity</h2>
+<p class="text-on-surface-variant mt-2">We've sent a 4-digit code to your phone.</p>
+</div>
+<div class="flex justify-center gap-4 mb-10">
+<input class="w-16 h-20 text-center text-3xl font-bold bg-surface neomorphic-inset border-none rounded-xl text-primary focus:ring-2 focus:ring-primary/20 outline-none" maxlength="1" type="text"/>
+<input class="w-16 h-20 text-center text-3xl font-bold bg-surface neomorphic-inset border-none rounded-xl text-primary focus:ring-2 focus:ring-primary/20 outline-none" maxlength="1" type="text"/>
+<input class="w-16 h-20 text-center text-3xl font-bold bg-surface neomorphic-inset border-none rounded-xl text-primary focus:ring-2 focus:ring-primary/20 outline-none" maxlength="1" type="text"/>
+<input class="w-16 h-20 text-center text-3xl font-bold bg-surface neomorphic-inset border-none rounded-xl text-primary focus:ring-2 focus:ring-primary/20 outline-none" maxlength="1" type="text"/>
+</div>
+<div class="space-y-4">
+<button class="w-full py-4 px-6 bg-surface neomorphic-raised rounded-lg text-on-surface-variant font-medium text-lg hover:text-primary transition-colors flex items-center justify-center gap-2 active:scale-95">
+                            Verify &amp; Continue
+                        </button>
+<div class="flex flex-col items-center gap-3 pt-2">
+<button class="text-sm text-outline hover:text-primary transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-base" data-icon="replay">replay</span>
+                                Resend Code (0:45)
+                            </button>
+</div>
+</div>
+<div class="mt-10 pt-10 border-t border-outline-variant/30 text-center">
+<div class="flex items-center justify-center gap-4 grayscale opacity-60">
+<span class="material-symbols-outlined text-4xl" data-icon="security">security</span>
+<span class="material-symbols-outlined text-4xl" data-icon="verified_user">verified_user</span>
+<span class="material-symbols-outlined text-4xl" data-icon="shield">shield</span>
+</div>
+<p class="text-[10px] uppercase tracking-widest text-outline mt-4 font-bold">Secure Bank-Level Encryption</p>
+</div>
+</div>
+<!-- Contextual Illustration Card -->
+<div class="mt-8 rounded-xl overflow-hidden neomorphic-raised aspect-[21/9] relative group">
+<img class="w-full h-full object-cover" data-alt="dramatic wide shot of a modern electric car on a desert road at twilight with streak of tail lights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCzgKYUmc0ie2dhgfXb6jAzv6njdVJdFclX-UYdlU-anGZlO0NxQXBH_cv3W8OyBMD1nPatt87KZ63WihD1tvf_FhJbk0-KPpLV3NrWyD9B0u81Hooqo-7r-jfmDvWIk6abqA9EtoNGp-onH0xyMbIkJzhksKfvw_PUQJc0W1mgchMnTE36zq5Dbml-_ZJ9mBpIigxd_Lcu3E6okX-fZkOX1tqQYwtLy1VfK72dbZHY34UAfQcR-_nWplGKpvMIoc3fDi0VgXTPGE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent flex items-end p-6">
+<p class="text-on-surface font-medium">"Getting around has never been this smooth."</p>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer from Shared Components -->
+<footer class="w-full border-t border-slate-200 dark:border-slate-800 bg-[#e8eaf0] dark:bg-slate-950 flex flex-col md:flex-row justify-between items-center px-12 py-8 mt-auto">
+<div class="text-lg font-semibold text-slate-700 mb-4 md:mb-0">RideNova</div>
+<div class="flex gap-8 mb-4 md:mb-0">
+<a class="font-plus-jakarta text-xs text-slate-500 hover:text-indigo-500 hover:underline" href="#">Privacy Policy</a>
+<a class="font-plus-jakarta text-xs text-slate-500 hover:text-indigo-500 hover:underline" href="#">Terms of Service</a>
+<a class="font-plus-jakarta text-xs text-slate-500 hover:text-indigo-500 hover:underline" href="#">Safety</a>
+<a class="font-plus-jakarta text-xs text-slate-500 hover:text-indigo-500 hover:underline" href="#">Cities</a>
+</div>
+<div class="font-plus-jakarta text-xs text-slate-500">© 2024 RideNova Inc. All rights reserved.</div>
+</footer>
+</body></html>

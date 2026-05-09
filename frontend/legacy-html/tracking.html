@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-secondary": "#3d3f4e",
+                        "outline-variant": "#414760",
+                        tertiary: "#af88ff",
+                        "error-container": "#871c34",
+                        "tertiary-fixed-dim": "#7632e7",
+                        "on-tertiary-container": "#ffffff",
+                        "on-tertiary": "#2b0065",
+                        "surface-variant": "#1f243c",
+                        "surface-container-lowest": "#000000",
+                        "inverse-on-surface": "#525462",
+                        secondary: "#c4c5d7",
+                        "on-surface-variant": "#a5aac7",
+                        "on-secondary-fixed": "#3c3f4d",
+                        "inverse-surface": "#fbf8ff",
+                        "surface-container-high": "#1a1f32",
+                        "surface-container-low": "#0f1322",
+                        surface: "#161821",
+                        "on-error": "#490013",
+                        "on-primary-fixed": "#000000",
+                        "surface-bright": "#252b43",
+                        outline: "#6f7490",
+                        "on-tertiary-fixed": "#ffffff",
+                        "surface-tint": "#c0c1ff",
+                        "primary-fixed-dim": "#6366f1",
+                        "on-primary": "#2724b8",
+                        "on-secondary-container": "#bdbed0",
+                        "inverse-primary": "#494bd7",
+                        error: "#f97386",
+                        "on-primary-fixed-variant": "#010028",
+                        "on-secondary-fixed-variant": "#585b6a",
+                        "on-background": "#e1e4ff",
+                        "secondary-fixed": "#e0e1f4",
+                        "primary-fixed": "#7073ff",
+                        "primary-container": "#3c3dca",
+                        "surface-dim": "#0b0e19",
+                        "tertiary-fixed": "#8342f4",
+                        "surface-container-highest": "#1f243c",
+                        "on-primary-container": "#e2e0ff",
+                        "secondary-fixed-dim": "#d2d3e5",
+                        "surface-container": "#14192a",
+                        primary: "#c0c1ff",
+                        "tertiary-container": "#8342f4",
+                        "on-tertiary-fixed-variant": "#e5d5ff",
+                        "on-error-container": "#ff97a3",
+                        background: "#0a0b10",
+                        "on-surface": "#e1e4ff",
+                        "secondary-container": "#383b49",
+                        "secondary-dim": "#b6b8c9",
+                        "tertiary-dim": "#8a4cfc",
+                        "error-dim": "#c44b5f",
+                        "primary-dim": "#6063ee"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                        lg: "1rem",
+                        xl: "1.5rem",
+                        full: "9999px"
+                    },
+                    fontFamily: {
+                        headline: ["Plus Jakarta Sans"],
+                        body: ["Plus Jakarta Sans"],
+                        label: ["Plus Jakarta Sans"],
+                        display: "Plus Jakarta Sans"
+                    }
+                }
+            }
+        };
+    </script>
+<style>
+        .three-d-grey-layered {
+            background-color: #161821;
+            box-shadow: 
+                inset 1px 1px 0px 0px rgba(255, 255, 255, 0.05),
+                10px 10px 20px rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+        }
+        .inset-layered {
+            background-color: #0d0e14;
+            box-shadow: 
+                inset 4px 4px 8px rgba(0, 0, 0, 0.5),
+                inset -2px -2px 4px rgba(255, 255, 255, 0.02);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #0a0b10;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface h-screen overflow-hidden flex flex-col">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky z-50 bg-[#161821] border-b border-white/5 shadow-2xl flex justify-between items-center px-8 py-4 max-w-full mx-auto">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-semibold text-indigo-400 tracking-tight">RideNova</span>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-indigo-300 border-b-2 border-indigo-600 font-plus-jakarta text-sm font-medium transition-colors duration-200" href="#">Find Rides</a>
+<a class="text-slate-400 font-plus-jakarta text-sm font-medium hover:text-indigo-500 transition-colors duration-200" href="#">Drive</a>
+<a class="text-slate-400 font-plus-jakarta text-sm font-medium hover:text-indigo-500 transition-colors duration-200" href="#">Help</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="px-5 py-2.5 rounded-lg three-d-grey-layered text-sm font-medium text-on-surface active:scale-95 duration-150">Sign In</button>
+<button class="px-5 py-2.5 rounded-lg bg-primary text-slate-900 font-plus-jakarta text-sm font-bold active:scale-95 duration-150">Sign Up</button>
+</div>
+</header>
+<!-- Main Content: Full Screen Map Wrapper -->
+<main class="flex-grow relative overflow-hidden">
+<!-- Mock Map Background -->
+<div class="absolute inset-0 w-full h-full bg-slate-950 overflow-hidden">
+<img alt="High-tech cinematic 3D urban map with glowing neon routes" class="w-full h-full object-cover contrast-[1.1] opacity-60" data-alt="Detailed top-down city street map with a clean light aesthetic and a blue highlighted route line from point A to point B" data-location="San Francisco" src="https://lh3.googleusercontent.com/aida/ADBb0ugs41grnBqXwsazHhUapb-jnag1VGCKpMmMyHNspqIv03nGI0atsdsDLCHz0pjUeamXEc_MLYKwEhQTMUiwB4ZvIWZRV6XwKcAO2lht_k98kKvLEEmP0kJWHcQOH4xZm8p0uk5tfocN4QJYUFUMRXd46T2AHOMQJSEbN6pvb7Lkz9gk2ujEPmQEF-e7HKiYyLOjDhUvSNST7BfuBf-tpHjr4uP5DkTdkHiznN39Eh8zu-TXdtu2TI9SmLU"/>
+<!-- Route Overlay Graphics (Simulated) -->
+<svg class="absolute inset-0 w-full h-full pointer-events-none" preserveaspectratio="none" viewbox="0 0 1000 1000"><defs><filter id="glow"><fegaussianblur result="coloredBlur" stddeviation="3"></fegaussianblur><femerge><femergenode in="coloredBlur"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter></defs>
+<path d="M200,800 Q400,600 600,400 T800,200" fill="none" filter="url(#glow)" opacity="0.9" stroke="#6366f1" stroke-dasharray="12 8" stroke-linecap="round" stroke-width="6"></path>
+</svg>
+<!-- Stylized 3D Car Marker -->
+<div class="absolute top-[55%] left-[45%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center justify-center">
+<div class="w-12 h-12 rounded-full three-d-grey-layered flex items-center justify-center relative z-10 border border-primary/30 shadow-[0_0_20px_rgba(99,102,241,0.6)]">
+<span class="material-symbols-outlined text-primary text-2xl" style="font-variation-settings: 'FILL' 1;">directions_car</span>
+</div>
+<div class="w-6 h-6 bg-primary rounded-full absolute -bottom-2 blur-md opacity-60 z-0"></div>
+</div>
+<!-- Destination Pin -->
+<div class="absolute top-[20%] right-[20%] flex flex-col items-center">
+<div class="px-3 py-1 three-d-grey-layered rounded-full mb-2 text-xs font-semibold text-primary">Destination</div>
+<span class="material-symbols-outlined text-primary text-4xl" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+</div>
+<!-- Left Side Floating Status (Desktop Only) -->
+<div class="hidden lg:block absolute top-8 left-8 w-80 z-10">
+<div class="three-d-grey-layered p-6 rounded-2xl flex flex-col gap-4">
+<div class="flex items-center gap-3">
+<div class="w-3 h-3 rounded-full bg-primary animate-pulse"></div>
+<span class="text-sm font-semibold tracking-wide text-on-surface">Arriving in 3 mins</span>
+</div>
+<div class="inset-layered p-4 rounded-xl flex flex-col gap-3">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-xl">trip_origin</span>
+<div class="flex flex-col">
+<span class="text-[10px] text-on-surface-variant leading-none mb-1 uppercase tracking-widest">Pickup</span>
+<span class="text-sm font-medium">101 Market St, SF</span>
+</div>
+</div>
+<div class="w-px h-4 bg-outline/20 ml-2.5"></div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-tertiary text-xl">location_on</span>
+<div class="flex flex-col">
+<span class="text-[10px] text-on-surface-variant leading-none mb-1 uppercase tracking-widest">Dropoff</span>
+<span class="text-sm font-medium">Salesforce Tower, SF</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Ride Detail Card -->
+<div class="absolute bottom-10 left-0 right-0 px-4 md:px-0 flex justify-center z-20">
+<div class="w-full max-w-2xl three-d-grey-layered rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center gap-6 md:gap-10">
+<!-- Driver Profile -->
+<div class="flex items-center gap-5 w-full md:w-auto">
+<div class="relative">
+<img alt="Portrait of a friendly middle-aged male driver" class="w-20 h-20 rounded-2xl object-cover border-2 border-white/5 shadow-inner" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEon8QnqZwTG9gjvqFI7MQtJ7GtJFp0Yzc-f-BESzkxzu-45BsDSMi0xx4C1Iu8Z2WvJanDV3IghMftB6Isp6l1xFg1Gk_ZzcvKJWMLn0y-BjSK_oyk0daJIjyEGaWDyvY1smaUlBpOhXDexu5ggdCA6ZbG6rjlLV2mEBOWCKCbmI6QioTTiw-_mWA9a5a3V--qbbw7Gu4YD7BfqMLW57Okqd4aPd3Q2HONpOK5Q8Eb3MhKEno-TpLNmU7-JReCMJkk-OZ88zqE8k"/>
+<div class="absolute -bottom-2 -right-2 bg-primary text-slate-950 text-[10px] font-bold px-2 py-1 rounded-full flex items-center gap-1 shadow-lg">
+                            4.9 <span class="material-symbols-outlined text-[10px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<div class="flex flex-col">
+<h2 class="text-xl font-semibold text-on-surface leading-tight">Marcus Rivera</h2>
+<span class="text-sm text-on-surface-variant font-medium">Toyota Prius • White</span>
+<div class="mt-2 inset-layered px-3 py-1 rounded-md inline-block w-fit">
+<span class="text-xs font-bold tracking-widest text-on-surface">CAL-72X9</span>
+</div>
+</div>
+</div>
+<!-- Spacer Line -->
+<div class="hidden md:block w-px h-16 bg-white/10"></div>
+<!-- Actions Container -->
+<div class="flex items-center gap-4 w-full md:flex-grow">
+<button class="flex-grow flex items-center justify-center gap-2 py-4 rounded-xl three-d-grey-layered text-primary font-bold text-sm active:scale-95 transition-all">
+<span class="material-symbols-outlined">chat_bubble</span>
+                        Message Driver
+                    </button>
+<button class="flex-grow md:flex-grow-0 md:px-8 flex items-center justify-center gap-2 py-4 rounded-xl three-d-grey-layered text-error font-bold text-sm active:scale-95 transition-all">
+<span class="material-symbols-outlined">close</span>
+                        Cancel
+                    </button>
+</div>
+</div>
+</div>
+<!-- Interactive Map Controls (Floating) -->
+<div class="absolute right-6 top-1/2 -translate-y-1/2 flex flex-col gap-4">
+<button class="w-12 h-12 rounded-full three-d-grey-layered flex items-center justify-center text-on-surface-variant active:scale-90 transition-transform">
+<span class="material-symbols-outlined">add</span>
+</button>
+<button class="w-12 h-12 rounded-full three-d-grey-layered flex items-center justify-center text-on-surface-variant active:scale-90 transition-transform">
+<span class="material-symbols-outlined">remove</span>
+</button>
+<button class="w-12 h-12 rounded-full three-d-grey-layered flex items-center justify-center text-primary active:scale-90 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">my_location</span>
+</button>
+</div>
+</main>
+<!-- Footer - Secondary Information -->
+<footer class="w-full border-t border-white/5 bg-[#0a0b10] flex flex-col md:flex-row justify-between items-center px-12 py-4">
+<div class="flex items-center gap-2">
+<span class="text-lg font-semibold text-slate-300">RideNova</span>
+<span class="font-plus-jakarta text-xs text-slate-500">© 2024 RideNova Inc.</span>
+</div>
+<div class="flex gap-6 mt-4 md:mt-0">
+<a class="font-plus-jakarta text-xs text-slate-500 hover:text-indigo-400 transition-colors" href="#">Privacy Policy</a>
+<a class="font-plus-jakarta text-xs text-slate-500 hover:text-indigo-400 transition-colors" href="#">Terms of Service</a>
+<a class="font-plus-jakarta text-xs text-slate-500 hover:text-indigo-400 transition-colors" href="#">Safety</a>
+<a class="font-plus-jakarta text-xs text-slate-500 hover:text-indigo-400 transition-colors" href="#">Cities</a>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>RideNova - Your Ride, Your Way</title>
+<!-- Google Fonts: Plus Jakarta Sans & Material Symbols -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "outline": "#4b4d5a",
+                        "secondary-fixed-dim": "#b8baca",
+                        "surface-container-lowest": "#0f1014",
+                        "surface-container-high": "#282a36",
+                        "on-background": "#e2e4ea",
+                        "on-surface": "#e2e4ea",
+                        "primary": "#818cf8",
+                        "surface-container-highest": "#333644",
+                        "on-secondary-container": "#d8dae6",
+                        "primary-fixed": "#e0e2ff",
+                        "surface-variant": "#44475a",
+                        "on-primary-container": "#e0e2ff",
+                        "tertiary-fixed-dim": "#c4b5fd",
+                        "outline-variant": "#44475a",
+                        "error-container": "#450a0a",
+                        "on-tertiary": "#000000",
+                        "background": "#12141c",
+                        "on-surface-variant": "#b8baca",
+                        "secondary": "#a1a3b1",
+                        "primary-fixed-dim": "#a5b4fc",
+                        "surface-dim": "#1a1c24",
+                        "primary-container": "#4338ca",
+                        "secondary-container": "#404252",
+                        "inverse-on-surface": "#12141c",
+                        "secondary-fixed": "#d8dae6",
+                        "surface-tint": "#818cf8",
+                        "on-primary": "#000000",
+                        "surface-bright": "#333644",
+                        "error": "#f87171",
+                        "inverse-surface": "#e2e4ea",
+                        "on-primary-fixed": "#1e1b4b",
+                        "on-tertiary-fixed-variant": "#c4b5fd",
+                        "tertiary-fixed": "#ede9fe",
+                        "on-secondary-fixed-variant": "#b8baca",
+                        "tertiary-container": "#5b21b6",
+                        "surface": "#12141c",
+                        "on-secondary": "#000000",
+                        "on-tertiary-fixed": "#2e1065",
+                        "inverse-primary": "#6366f1",
+                        "on-primary-fixed-variant": "#a5b4fc",
+                        "on-error-container": "#fecaca",
+                        "surface-container": "#1e202a",
+                        "on-tertiary-container": "#ede9fe",
+                        "tertiary": "#a78bfa",
+                        "on-error": "#000000",
+                        "surface-container-low": "#161820",
+                        "on-secondary-fixed": "#1a1b26"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.75rem",
+                        "lg": "1.25rem",
+                        "xl": "1.75rem",
+                        "2xl": "2.25rem",
+                        "full": "9999px"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans", "sans-serif"],
+                        "body": ["Plus Jakarta Sans", "sans-serif"],
+                        "label": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    boxShadow: {
+                        'neo-raised': '8px 8px 16px rgba(0,0,0,0.4), -4px -4px 12px rgba(255,255,255,0.03)',
+                        'neo-pressed': 'inset 4px 4px 8px rgba(0,0,0,0.5), inset -2px -2px 6px rgba(255,255,255,0.02)',
+                        'neo-inset-container': 'inset 6px 6px 12px rgba(0,0,0,0.3), inset -2px -2px 8px rgba(255,255,255,0.02)',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body antialiased selection:bg-primary-container selection:text-on-primary-container">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col items-center">
+<div class="w-full max-w-[1200px] flex flex-col flex-1 px-4 sm:px-6 lg:px-8">
+<!-- Header -->
+<header class="flex items-center justify-between whitespace-nowrap py-8 mb-4">
+<div class="flex items-center gap-4 text-primary">
+<div class="size-10 rounded-xl shadow-neo-raised flex items-center justify-center bg-surface-container-low text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">directions_car</span>
+</div>
+<h2 class="text-on-surface text-2xl font-bold leading-tight tracking-tight font-headline">RideNova</h2>
+</div>
+<div class="hidden md:flex flex-1 justify-end gap-10 items-center">
+<nav class="flex items-center gap-8">
+<a class="text-on-surface-variant hover:text-primary transition-colors text-sm font-semibold leading-normal" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-sm font-semibold leading-normal" href="#">About</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-sm font-semibold leading-normal" href="#">Drivers</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-sm font-semibold leading-normal" href="#">Contact</a>
+</nav>
+<div class="flex gap-6">
+<button class="flex min-w-[100px] cursor-pointer items-center justify-center rounded-xl h-12 px-6 bg-surface-container-low shadow-neo-raised hover:shadow-neo-pressed active:shadow-neo-pressed transition-all text-primary text-sm font-bold leading-normal tracking-wide">
+<span>Sign Up</span>
+</button>
+<button class="flex min-w-[100px] cursor-pointer items-center justify-center rounded-xl h-12 px-6 bg-surface-container-low shadow-neo-raised hover:shadow-neo-pressed active:shadow-neo-pressed transition-all text-on-surface text-sm font-bold leading-normal tracking-wide">
+<span>Log In</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex flex-col flex-1 @container gap-20 pb-20">
+<!-- Hero Section -->
+<div class="@[480px]:p-3 shadow-neo-raised rounded-[2.5rem] bg-surface-container-low">
+<div class="flex min-h-[560px] flex-col gap-10 bg-cover bg-center bg-no-repeat @[480px]:rounded-[2rem] items-center justify-center p-8 relative overflow-hidden shadow-neo-inset-container" data-alt="abstract dark fluid gradients" style='background-image: linear-gradient(to bottom, rgba(18, 20, 28, 0.85), rgba(18, 20, 28, 0.95)), url("https://lh3.googleusercontent.com/aida-public/AB6AXuDhx3mag-Ggbxs5LMIvz4OT_0oWMCwKJdsJQshOU7sHsBZCsbwjOTtc_8yBudGsizD4fI--hsd0vnwL5cu3q3nCaava0ICTXpxOkl3aO0zIHUXI-6031StZ1b_3W7TsCytgKiaUq9XYmI9zj2DSyjL1O0mJZVrYDzxAtgX_V0yMtcqjMFcJPlxytfC7VGDoS2BReH8rmEsYNH5ztVzmnNtk7w8c2_xP_-p4eEOo0z8zECsuP9jH9DBc3_Tqj0LSpnuOC6uSKtQvIZs");'>
+<div class="flex flex-col gap-6 text-center z-10 max-w-2xl px-4">
+<h1 class="text-on-surface text-4xl font-extrabold leading-tight tracking-tight @[480px]:text-7xl font-headline drop-shadow-lg">
+                                    Your Ride, <span class="text-primary">Your Way</span>
+</h1>
+<h2 class="text-on-surface-variant text-base font-medium leading-relaxed @[480px]:text-xl max-w-lg mx-auto">
+                                    Experience seamless mobility with RideNova. Effortlessly book a ride to your next destination or join our network as a driver.
+                                </h2>
+</div>
+<div class="flex-wrap gap-8 flex justify-center z-10 mt-6">
+<button class="flex min-w-[160px] cursor-pointer items-center justify-center rounded-2xl h-16 px-10 bg-surface-container shadow-neo-raised hover:shadow-neo-pressed active:shadow-neo-pressed transition-all text-primary text-base font-bold leading-normal tracking-wide gap-3 group">
+<span class="material-symbols-outlined text-xl group-hover:scale-110 transition-transform">search</span>
+<span>Find a Ride</span>
+</button>
+<button class="flex min-w-[160px] cursor-pointer items-center justify-center rounded-2xl h-16 px-10 bg-surface-container shadow-neo-raised hover:shadow-neo-pressed active:shadow-neo-pressed transition-all text-on-surface text-base font-bold leading-normal tracking-wide gap-3 group">
+<span class="material-symbols-outlined text-xl group-hover:scale-110 transition-transform">local_taxi</span>
+<span>Become a Driver</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Features Section -->
+<div class="flex flex-col gap-16 px-2 @container">
+<div class="flex flex-col gap-4 text-center items-center">
+<h2 class="text-on-surface text-[32px] font-bold leading-tight @[480px]:text-[48px] font-headline max-w-[800px]">
+                                Why Choose RideNova
+                            </h2>
+<p class="text-on-surface-variant text-lg font-medium leading-normal max-w-[640px]">
+                                We craft the optimal experience for both our riders and dedicated drivers.
+                            </p>
+</div>
+<div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-10 p-0">
+<div class="flex flex-1 gap-6 rounded-3xl bg-surface-container-low shadow-neo-raised p-10 flex-col items-start hover:-translate-y-2 transition-transform duration-300 border border-white/5">
+<div class="size-16 rounded-2xl shadow-neo-pressed bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[32px]">shield</span>
+</div>
+<div class="flex flex-col gap-3">
+<h3 class="text-on-surface text-2xl font-bold leading-tight font-headline">Safety First</h3>
+<p class="text-on-surface-variant text-base font-medium leading-relaxed">Top-notch safety protocols and real-time tracking for every journey.</p>
+</div>
+</div>
+<div class="flex flex-1 gap-6 rounded-3xl bg-surface-container-low shadow-neo-raised p-10 flex-col items-start hover:-translate-y-2 transition-transform duration-300 border border-white/5">
+<div class="size-16 rounded-2xl shadow-neo-pressed bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[32px]">calendar_clock</span>
+</div>
+<div class="flex flex-col gap-3">
+<h3 class="text-on-surface text-2xl font-bold leading-tight font-headline">Reliable Rides</h3>
+<p class="text-on-surface-variant text-base font-medium leading-relaxed">Always on time, providing consistent service wherever you need to go.</p>
+</div>
+</div>
+<div class="flex flex-1 gap-6 rounded-3xl bg-surface-container-low shadow-neo-raised p-10 flex-col items-start hover:-translate-y-2 transition-transform duration-300 border border-white/5">
+<div class="size-16 rounded-2xl shadow-neo-pressed bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[32px]">credit_card</span>
+</div>
+<div class="flex flex-col gap-3">
+<h3 class="text-on-surface text-2xl font-bold leading-tight font-headline">Easy Payments</h3>
+<p class="text-on-surface-variant text-base font-medium leading-relaxed">Seamless, cashless, and highly secure payment options tailored for you.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Ride Options Section -->
+<div class="flex flex-col gap-10 px-2">
+<div class="flex flex-col gap-3">
+<h2 class="text-on-surface text-4xl font-bold leading-tight tracking-tight font-headline">Ride Options for Everyone</h2>
+<p class="text-on-surface-variant text-lg font-medium">Select the vehicle that perfectly suits your current needs.</p>
+</div>
+<div class="grid grid-cols-[repeat(auto-fit,minmax(320px,1fr))] gap-10">
+<div class="flex flex-col gap-6 rounded-3xl bg-surface-container-low shadow-neo-raised p-6 group cursor-pointer border border-white/5">
+<div class="w-full bg-center bg-no-repeat aspect-[16/10] bg-cover rounded-2xl shadow-neo-inset-container overflow-hidden" data-alt="compact modern electric hatchback" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuApAmew9AE2X9woSIUwa-WXaFDoyesSy9l42P17cWfGHzB4vTKED8CM1q3HWdUO1Xi6LB9ZBFsq6spvkJXhb2-yPt-0ER6bpVu85z660zD53SASZ3CXHbUex8ttBdpkcqgGRJlqzDAp_QnnN-CeQnUi6vnVvIfIZGbyxmrTnI7NLX-Myo7MNICOtwTeCQ3Y7g8CBQnUOGbPS2KtlsMzo8sNCfCjL86d8XVHdxuzzZq5i5o6YkNCq_DVmczVqM81X8WMcHhbH0e_18g");'>
+</div>
+<div class="px-3 pb-2 flex flex-col gap-2">
+<p class="text-on-surface text-xl font-bold leading-normal font-headline group-hover:text-primary transition-colors">Economy</p>
+<p class="text-on-surface-variant text-base font-medium leading-normal">Affordable, everyday rides for quick trips.</p>
+</div>
+</div>
+<div class="flex flex-col gap-6 rounded-3xl bg-surface-container-low shadow-neo-raised p-6 group cursor-pointer border border-white/5">
+<div class="w-full bg-center bg-no-repeat aspect-[16/10] bg-cover rounded-2xl shadow-neo-inset-container overflow-hidden" data-alt="luxury executive sedan" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAekEMpamYLdQUbWrhyPZ4Sw97utRwdahjCx63kkfX_s7hnapFBPyUJ9eJwI3gAfq2M2RDY-e0-5BxbW0VEjTkPkprqhYsHxO6MXFWd-HjRk4HB6xOOTUTOBZ6hjMa1xA-ix6qUVT8JIAL5RhL_G4Gm0EVjgwRxmWclzahWKyicJZRJOBz1irFsEGRFW6N4_bai8HIovn4jCSlFuHSdFQCO7ooegfwjX43NJMQ1KsWooMZFeNKXhaTXOm9HXZUrTkgA_ydE1Y035FI");'>
+</div>
+<div class="px-3 pb-2 flex flex-col gap-2">
+<p class="text-on-surface text-xl font-bold leading-normal font-headline group-hover:text-primary transition-colors">Premium</p>
+<p class="text-on-surface-variant text-base font-medium leading-normal">Elevated luxury and superior comfort.</p>
+</div>
+</div>
+<div class="flex flex-col gap-6 rounded-3xl bg-surface-container-low shadow-neo-raised p-6 group cursor-pointer border border-white/5">
+<div class="w-full bg-center bg-no-repeat aspect-[16/10] bg-cover rounded-2xl shadow-neo-inset-container overflow-hidden" data-alt="spacious premium SUV" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBykDspNLoNJ-cD-zctiTQlJe-TAfOC57ku6Zvup2l2vydEzFphngboj7xFyCXkIRMUkQe0Q5gA9JmNkULHQ5DNlDWffVjI7venSQri8MzDvI5GTzBNdnQXYhHrtoRqMiIOCDzXdrrfYfrBRdUeh_cSiydJOLawagFUt3B_kkhb5-MFYdKxEDCQJ4BMHiPe1KkBHr9v2CNlQS-EnbEcRVrSoUcD-w8KyHO_aqzTx8adVQmH5E0RfdM-wZcaQ1fADFBfl3qiAviaXrk");'>
+</div>
+<div class="px-3 pb-2 flex flex-col gap-2">
+<p class="text-on-surface text-xl font-bold leading-normal font-headline group-hover:text-primary transition-colors">XL</p>
+<p class="text-on-surface-variant text-base font-medium leading-normal">Extra space tailored for groups and luggage.</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="mt-8 mb-12 shadow-neo-raised rounded-3xl bg-surface-container-low p-10 flex flex-col md:flex-row justify-between items-center gap-8 border border-white/5">
+<div class="flex items-center gap-4">
+<div class="size-12 rounded-xl shadow-neo-pressed bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">directions_car</span>
+</div>
+<span class="text-on-surface font-bold text-2xl font-headline tracking-tight">RideNova</span>
+</div>
+<nav class="flex flex-wrap justify-center gap-x-10 gap-y-4">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-semibold text-sm" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-semibold text-sm" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-semibold text-sm" href="#">Help Center</a>
+</nav>
+<p class="text-on-surface-variant text-sm font-medium">
+                        © 2024 RideNova. All rights reserved.
+                    </p>
+</footer>
+</div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-headline: "Plus Jakarta Sans", sans-serif;
+  --font-body: "Plus Jakarta Sans", sans-serif;
+  --font-label: "Plus Jakarta Sans", sans-serif;
+
+  --color-outline: #4b4d5a;
+  --color-secondary-fixed-dim: #b8baca;
+  --color-surface-container-lowest: #0f1014;
+  --color-surface-container-high: #282a36;
+  --color-on-background: #e2e4ea;
+  --color-on-surface: #e2e4ea;
+  --color-primary: #818cf8;
+  --color-surface-container-highest: #333644;
+  --color-on-secondary-container: #d8dae6;
+  --color-primary-fixed: #e0e2ff;
+  --color-surface-variant: #44475a;
+  --color-on-primary-container: #e0e2ff;
+  --color-tertiary-fixed-dim: #c4b5fd;
+  --color-outline-variant: #44475a;
+  --color-error-container: #450a0a;
+  --color-on-tertiary: #000000;
+  --color-background: #12141c;
+  --color-on-surface-variant: #b8baca;
+  --color-secondary: #a1a3b1;
+  --color-primary-fixed-dim: #a5b4fc;
+  --color-surface-dim: #1a1c24;
+  --color-primary-container: #4338ca;
+  --color-secondary-container: #404252;
+  --color-inverse-on-surface: #12141c;
+  --color-secondary-fixed: #d8dae6;
+  --color-surface-tint: #818cf8;
+  --color-on-primary: #000000;
+  --color-surface-bright: #333644;
+  --color-error: #f87171;
+  --color-inverse-surface: #e2e4ea;
+  --color-on-primary-fixed: #1e1b4b;
+  --color-on-tertiary-fixed-variant: #c4b5fd;
+  --color-tertiary-fixed: #ede9fe;
+  --color-on-secondary-fixed-variant: #b8baca;
+  --color-tertiary-container: #5b21b6;
+  --color-surface: #12141c;
+  --color-on-secondary: #000000;
+  --color-on-tertiary-fixed: #2e1065;
+  --color-inverse-primary: #6366f1;
+  --color-on-primary-fixed-variant: #a5b4fc;
+  --color-on-error-container: #fecaca;
+  --color-surface-container: #1e202a;
+  --color-on-tertiary-container: #ede9fe;
+  --color-tertiary: #a78bfa;
+  --color-on-error: #000000;
+  --color-surface-container-low: #161820;
+  --color-on-secondary-fixed: #1a1b26;
+
+  --shadow-neo-raised: 8px 8px 16px rgba(0,0,0,0.4), -4px -4px 12px rgba(255,255,255,0.03);
+  --shadow-neo-pressed: inset 4px 4px 8px rgba(0,0,0,0.5), inset -2px -2px 6px rgba(255,255,255,0.02);
+  --shadow-neo-inset-container: inset 6px 6px 12px rgba(0,0,0,0.3), inset -2px -2px 8px rgba(255,255,255,0.02);
+
+  --radius-DEFAULT: 0.75rem;
+  --radius-lg: 1.25rem;
+  --radius-xl: 1.75rem;
+  --radius-2xl: 2.25rem;
+  --radius-full: 9999px;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-on-surface);
+  font-family: var(--font-body);
+}
